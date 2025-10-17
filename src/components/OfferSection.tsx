@@ -19,12 +19,12 @@ const OfferSection = () => {
     <section id="offer" className="py-20 px-4 relative">
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-12 space-y-6">
-          <p className="text-xl text-muted-foreground uppercase tracking-wider">A Oferta</p>
+          <p className="text-xl text-primary uppercase tracking-wider font-mono neon-glow">[ A OFERTA ]</p>
           <h2 className="text-4xl md:text-5xl font-bold">
             Acesso à sabedoria{" "}
             <span className="text-primary neon-glow">não é um custo.</span>
             <br />
-            <span className="text-accent neon-glow-purple">É um investimento.</span>
+            <span className="text-accent neon-glow-red">É um investimento.</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Quanto vale ter uma vantagem analítica sobre o mercado e, principalmente, sobre seus próprios impulsos?
@@ -38,13 +38,13 @@ const OfferSection = () => {
           
           <div className="relative z-10 space-y-8">
             <div className="text-center space-y-4">
-              <h3 className="text-3xl font-bold text-foreground">Acesso Anual ao Oráculo</h3>
+              <h3 className="text-3xl font-bold text-foreground font-mono">ACESSO ANUAL AO ORÁCULO</h3>
               <div className="flex items-baseline justify-center gap-2">
-                <span className="text-sm text-muted-foreground">Pagamento Único de</span>
-                <span className="text-6xl font-bold text-primary neon-glow">R$ 297</span>
+                <span className="text-sm text-muted-foreground font-mono">PAGAMENTO ÚNICO DE</span>
+                <span className="text-7xl font-bold text-primary neon-glow font-mono">R$ 297</span>
                 <span className="text-2xl text-muted-foreground">,00</span>
               </div>
-              <p className="text-muted-foreground italic">
+              <p className="text-muted-foreground italic font-mono">
                 (O equivalente a apenas R$ 24,75 por mês)
               </p>
             </div>

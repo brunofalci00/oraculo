@@ -46,34 +46,18 @@ const PowersSection = () => {
           {powers.map((power, index) => (
             <div
               key={index}
-              className={`${
-                power.color === "primary" ? "neon-border" : "neon-border-purple"
-              } bg-card rounded-xl p-8 space-y-6 transition-all duration-300 hover:scale-105 animate-fade-in`}
+              className="neon-border bg-card rounded-xl p-8 space-y-6 transition-all duration-300 hover:scale-105 animate-fade-in"
               style={{ animationDelay: `${index * 0.15}s` }}
             >
               <div className="flex items-start gap-4">
-                <div
-                  className={`w-14 h-14 rounded-lg flex items-center justify-center ${
-                    power.color === "primary" ? "bg-primary/20" : "bg-accent/20"
-                  }`}
-                >
-                  <power.icon
-                    className={`w-7 h-7 ${
-                      power.color === "primary" ? "text-primary" : "text-accent"
-                    }`}
-                  />
+                <div className="w-14 h-14 rounded-lg flex items-center justify-center bg-primary/20">
+                  <power.icon className="w-7 h-7 text-primary" />
                 </div>
                 <div className="flex-1">
-                  <h3
-                    className={`text-2xl font-bold mb-1 ${
-                      power.color === "primary"
-                        ? "text-primary neon-glow"
-                        : "text-accent neon-glow-purple"
-                    }`}
-                  >
+                  <h3 className="text-2xl font-bold mb-1 text-primary neon-glow font-mono">
                     {power.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground uppercase tracking-wider">
+                  <p className="text-sm text-muted-foreground uppercase tracking-wider font-mono">
                     {power.subtitle}
                   </p>
                 </div>

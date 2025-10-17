@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Terminal from "@/components/Terminal";
 import heroImage from "@/assets/hero-oracle.jpg";
 
 const Hero = () => {
@@ -27,26 +28,43 @@ const Hero = () => {
       {/* Content */}
       <div className="container relative z-10 px-4 py-20 mx-auto max-w-5xl">
         <div className="text-center space-y-8 animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-            <span className="neon-glow">Suas apostas são guiadas pela</span>
-            <br />
-            <span className="text-primary neon-glow">emoção</span>
-            <span className="neon-glow"> ou pela </span>
-            <span className="text-accent neon-glow-purple">matemática?</span>
-          </h1>
+          <div className="mb-8">
+            <h1 className="text-6xl md:text-8xl font-bold mb-6 tracking-tight">
+              <span className="text-primary neon-glow">O ORÁCULO</span>
+            </h1>
+            <div className="w-32 h-1 bg-primary mx-auto neon-glow"></div>
+          </div>
           
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto font-light">
-            A resposta define seu lucro.
+          <h2 className="text-4xl md:text-6xl font-bold leading-tight">
+            <span className="text-foreground">As casas </span>
+            <span className="text-accent neon-glow-red">mentem.</span>
+            <br />
+            <span className="text-foreground">Nós </span>
+            <span className="text-primary neon-glow">expomos.</span>
+          </h2>
+          
+          <p className="text-xl md:text-2xl text-primary font-mono max-w-3xl mx-auto">
+            Receba <span className="neon-glow">análises matemáticas de odds</span> e descubra se te pagaram o valor justo.
           </p>
+
+          <Terminal 
+            lines={[
+              "$ initialize_analysis.exe",
+              "> System ready...",
+              "> Aguardando input...",
+              "> Análise de valor ativada",
+            ]}
+            className="max-w-2xl mx-auto"
+          />
 
           <div className="pt-8">
             <Button 
               size="xl" 
               variant="oracle"
               onClick={scrollToOffer}
-              className="animate-pulse-glow"
+              className="animate-pulse-glow text-lg"
             >
-              Consultar O Oráculo Agora
+              ⚡ FAZER ANÁLISE GRÁTIS AGORA ⚡
             </Button>
           </div>
         </div>

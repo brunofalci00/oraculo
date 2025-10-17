@@ -25,9 +25,9 @@ const AmplifySection = () => {
         <div className="text-center mb-16 space-y-6">
           <h2 className="text-4xl md:text-5xl font-bold">
             O maior inimigo do apostador{" "}
-            <span className="text-primary neon-glow">não é a zebra.</span>
+            <span className="text-accent neon-glow-red">não é a zebra.</span>
             <br />
-            <span className="text-accent neon-glow-purple">É a própria mente.</span>
+            <span className="text-primary neon-glow">É a própria mente.</span>
           </h2>
         </div>
 
@@ -53,8 +53,8 @@ const AmplifySection = () => {
           <p className="text-xl text-foreground leading-relaxed">
             A verdade é que, sem um método frio e calculista, você não é um investidor.
           </p>
-          <p className="text-2xl font-bold">
-            Você é apenas um <span className="text-destructive">torcedor com dinheiro em jogo</span>, contando com a sorte.
+          <p className="text-2xl font-bold font-mono">
+            Você é apenas um <span className="text-accent neon-glow-red">torcedor com dinheiro em jogo</span>, contando com a sorte.
           </p>
           <p className="text-xl text-muted-foreground">
             E no longo prazo, a sorte sempre favorece a casa.
