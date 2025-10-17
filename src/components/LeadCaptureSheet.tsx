@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Sheet,
   SheetContent,
@@ -150,7 +151,9 @@ const LeadCaptureSheet = () => {
                   className="text-sm text-muted-foreground cursor-pointer leading-relaxed"
                 >
                   Aceito receber comunicações do Oráculo e estou ciente da{" "}
-                  <span className="text-primary hover:underline">Política de Privacidade</span>
+                  <Link to="/politica-de-privacidade" className="text-primary hover:underline">
+                    Política de Privacidade
+                  </Link>
                 </Label>
               </div>
 
