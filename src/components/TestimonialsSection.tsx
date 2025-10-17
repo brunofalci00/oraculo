@@ -1,5 +1,3 @@
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-
 const testimonials = [
   {
     image: "/testimonial-1.png",
@@ -18,7 +16,7 @@ const testimonials = [
 const TestimonialsSection = () => {
   return (
     <section className="relative px-4 py-16 md:py-24">
-      <div className="container relative mx-auto max-w-6xl">
+      <div className="container relative mx-auto max-w-5xl">
         <div className="mb-12 space-y-4 px-2 text-center md:mb-16 md:space-y-6">
           <p className="font-mono text-base uppercase tracking-[0.35em] text-primary neon-glow md:text-xl">
             [ RESULTADOS REAIS ]
@@ -32,33 +30,17 @@ const TestimonialsSection = () => {
           </p>
         </div>
 
-        <Carousel
-          opts={{
-            align: "start",
-            loop: true,
-          }}
-          className="w-full"
-        >
-          <CarouselContent className="-ml-6">
-            {testimonials.map((testimonial, index) => (
-              <CarouselItem
-                key={index}
-                className="pl-6 basis-[90%] sm:basis-[70%] md:basis-1/2 xl:basis-1/3"
-              >
-                <div className="overflow-hidden rounded-3xl border border-white/10 bg-black/60 shadow-[0_25px_60px_rgba(0,0,0,0.55)]">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.alt}
-                    className="h-full w-full object-contain"
-                    loading="lazy"
-                  />
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="hidden h-10 w-10 -left-10 border-white/20 bg-background/80 text-white hover:border-white/30 hover:bg-white/10 md:flex" />
-          <CarouselNext className="hidden h-10 w-10 -right-10 border-white/20 bg-background/80 text-white hover:border-white/30 hover:bg-white/10 md:flex" />
-        </Carousel>
+        <div className="flex flex-col items-center gap-10 md:gap-12">
+          {testimonials.map((testimonial, index) => (
+            <img
+              key={index}
+              src={testimonial.image}
+              alt={testimonial.alt}
+              className="w-full"
+              loading="lazy"
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
