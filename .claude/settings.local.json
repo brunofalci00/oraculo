@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__shadcn__list_items_in_registries",
+      "mcp__shadcn__search_items_in_registries",
+      "mcp__shadcn__view_items_in_registries",
+      "mcp__shadcn__get_add_command_for_items",
+      "Bash(npx shadcn@latest add:*)",
+      "Bash(del \"C:\\Users\\Bruno\\mystic-bet-bot\\public\\favicon.ico\")",
+      "WebFetch(domain:ibb.co)",
+      "Bash(curl:*)",
+      "Bash(npm run dev:*)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "shadcn"
+  ]
+}

@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Check, Shield } from "lucide-react";
+import UrgencyBadge from "@/components/UrgencyBadge";
 
 const OfferSection = () => {
   const features = [
@@ -7,44 +8,50 @@ const OfferSection = () => {
     "O Espelho da Verdade: Dashboard de performance completo",
     "O Mapa do Futuro: Planejador de metas e recuperação",
     "O Vigia Silencioso: Alertas proativos de oportunidades e riscos",
+    "Análise de Padrões: Machine Learning personalizado",
+    "Proteção Anti-Tilt: Controle emocional automático",
     "Acesso por 12 meses completos",
+    "Suporte prioritário via WhatsApp",
   ];
 
   const handleCTA = () => {
-    // Aqui você pode adicionar a lógica de redirecionamento para WhatsApp ou checkout
-    window.open('https://wa.me/seu-numero', '_blank');
+    window.location.href = 'https://pay.hub.la/W25EU8AhTAZM5b0BvKxX';
   };
 
   return (
-    <section id="offer" className="py-20 px-4 relative">
+    <section id="offer" className="py-12 md:py-20 px-4 relative">
       <div className="container mx-auto max-w-4xl">
-        <div className="text-center mb-12 space-y-6">
-          <p className="text-xl text-primary uppercase tracking-wider font-mono neon-glow">[ A OFERTA ]</p>
-          <h2 className="text-4xl md:text-5xl font-bold">
+        <div className="text-center mb-12 space-y-6 px-2">
+          <div className="flex justify-center mb-4">
+            <UrgencyBadge variant="limited" />
+          </div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight pt-4">
             Acesso à sabedoria{" "}
             <span className="text-primary neon-glow">não é um custo.</span>
             <br />
             <span className="text-accent neon-glow-red">É um investimento.</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed px-2">
             Quanto vale ter uma vantagem analítica sobre o mercado e, principalmente, sobre seus próprios impulsos?
           </p>
         </div>
 
-        <div className="neon-border bg-card rounded-2xl p-8 md:p-12 space-y-8 relative overflow-hidden">
+        <div className="neon-border bg-card rounded-2xl p-6 md:p-8 lg:p-12 space-y-6 md:space-y-8 relative overflow-hidden">
           {/* Decorative gradients */}
           <div className="absolute top-0 left-0 w-96 h-96 bg-[radial-gradient(circle,hsl(var(--primary)/0.15)_0%,transparent_70%)] blur-3xl" />
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-[radial-gradient(circle,hsl(var(--accent)/0.15)_0%,transparent_70%)] blur-3xl" />
-          
-          <div className="relative z-10 space-y-8">
-            <div className="text-center space-y-4">
-              <h3 className="text-3xl font-bold text-foreground font-mono">ACESSO ANUAL AO ORÁCULO</h3>
-              <div className="flex items-baseline justify-center gap-2">
-                <span className="text-sm text-muted-foreground font-mono">PAGAMENTO ÚNICO DE</span>
-                <span className="text-7xl font-bold text-primary neon-glow font-mono">R$ 297</span>
-                <span className="text-2xl text-muted-foreground">,00</span>
+
+          <div className="relative z-10 space-y-6 md:space-y-8">
+            <div className="text-center space-y-3 md:space-y-4">
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-foreground font-mono leading-tight">ACESSO ANUAL AO ORÁCULO</h3>
+              <div className="flex flex-col sm:flex-row items-center sm:items-baseline justify-center gap-1 sm:gap-2">
+                <span className="text-xs md:text-sm text-muted-foreground font-mono">PAGAMENTO ÚNICO DE</span>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary neon-glow font-mono">R$ 297</span>
+                  <span className="text-xl md:text-2xl text-muted-foreground">,00</span>
+                </div>
               </div>
-              <p className="text-muted-foreground italic font-mono">
+              <p className="text-sm md:text-base text-muted-foreground italic font-mono">
                 (O equivalente a apenas R$ 24,75 por mês)
               </p>
             </div>
@@ -64,9 +71,9 @@ const OfferSection = () => {
             </div>
 
             <div className="pt-6">
-              <Button 
-                size="xl" 
-                variant="oracle" 
+              <Button
+                size="xl"
+                variant="oracle"
                 className="w-full"
                 onClick={handleCTA}
               >

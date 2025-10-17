@@ -1,61 +1,80 @@
-import { Star, Quote } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const TestimonialsSection = () => {
   const testimonials = [
     {
-      name: "Carlos D.",
-      text: "O Oráculo é como ter um profissional sussurrando no meu ouvido. A função de 'veredito' já me salvou de umas 5 entradas ruins essa semana. O que eu ia perder já pagou o acesso anual.",
-      rating: 5,
+      image: "/testimonial-1.png",
+      alt: "Depoimento WhatsApp - Carlos D.",
     },
     {
-      name: "Felipe S.",
-      text: "O 'Alerta de Padrão Emocional' é bizarro. Eu tinha acabado de perder uma aposta e já ia entrar em outra pra recuperar, e o Oráculo me mandou uma mensagem: 'Aconselha-se pausa imediata'. Foi o que eu precisava pra parar e respirar. Isso não tem preço.",
-      rating: 5,
+      image: "/testimonial-2.png",
+      alt: "Depoimento WhatsApp - Cliente satisfeito",
+    },
+    {
+      image: "/testimonial-3.png",
+      alt: "Depoimento WhatsApp - Recuperação de banca",
     },
   ];
 
   return (
-    <section className="py-20 px-4 relative">
+    <section className="py-12 md:py-16 px-4 relative">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+        <div className="text-center mb-12 md:mb-16 space-y-4 md:space-y-6 px-2">
+          <p className="text-base md:text-xl text-primary uppercase tracking-wider font-mono neon-glow">[ RESULTADOS REAIS ]</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
             Eles pararam de contar com a sorte e{" "}
             <span className="text-primary neon-glow">passaram a operar com a matemática</span>
           </h2>
+          <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Veja mensagens reais de usuários que transformaram suas apostas com análise matemática e gestão de banca profissional
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        {/* Mobile: Stack vertically */}
+        <div className="md:hidden flex flex-col gap-0 w-full px-0">
           {testimonials.map((testimonial, index) => (
-            <div
+            <img
               key={index}
-              className="neon-border bg-card rounded-xl p-8 space-y-6 relative animate-fade-in"
-              style={{ animationDelay: `${index * 0.2}s` }}
-            >
-              <Quote className="w-10 h-10 text-primary/30 absolute top-6 right-6" />
-              
-              <div className="flex gap-1">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-primary text-primary" />
-                ))}
-              </div>
-
-              <p className="text-foreground leading-relaxed text-lg relative z-10">
-                "{testimonial.text}"
-              </p>
-
-              <div className="flex items-center gap-3 pt-4 border-t border-border">
-                <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                  <span className="text-primary font-bold">
-                    {testimonial.name.charAt(0)}
-                  </span>
-                </div>
-                <div>
-                  <p className="font-semibold text-foreground">{testimonial.name}</p>
-                  <p className="text-sm text-muted-foreground">Usuário do Oráculo</p>
-                </div>
-              </div>
-            </div>
+              src={testimonial.image}
+              alt={testimonial.alt}
+              className="w-full h-auto"
+              loading="lazy"
+            />
           ))}
+        </div>
+
+        {/* Desktop: Carousel */}
+        <div className="hidden md:block">
+          <Carousel
+            opts={{
+              align: "center",
+              loop: true,
+            }}
+            className="w-full max-w-full mx-auto"
+          >
+            <CarouselContent className="-ml-4">
+              {testimonials.map((testimonial, index) => (
+                <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                  <div className="px-1">
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.alt}
+                      className="w-full h-auto rounded-lg object-cover shadow-2xl mx-auto"
+                      loading="lazy"
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="-left-12 border-primary/30 bg-card hover:bg-primary/20 hover:border-primary" />
+            <CarouselNext className="-right-12 border-primary/30 bg-card hover:bg-primary/20 hover:border-primary" />
+          </Carousel>
         </div>
       </div>
     </section>
